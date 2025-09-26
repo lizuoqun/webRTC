@@ -1,0 +1,83 @@
+# ========================
+# 通用忽略规则
+# ========================
+
+# 依赖目录
+node_modules/
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# 编辑器和 IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ========================
+# 前端 (Vue + Vite) 特定
+# ========================
+
+# 构建输出目录
+client/dist/
+client/.vite/
+client/.vite-inspect/
+
+# Vite 缓存
+client/.vite-cache/
+
+# TypeScript 编译输出（如果使用）
+client/*.tsbuildinfo
+
+# ========================
+# 后端 (Node.js) 特定  
+# ========================
+
+# 构建/编译输出
+server/build/
+server/dist/
+server/out/
+server/lib/
+
+# 调试文件
+server/.nyc_output/
+server/coverage/
+server/.nyc_output/
+
+# Docker 相关（如果使用）
+server/docker-compose.override.yml
+
+# ========================
+# 其他通用规则
+# ========================
+
+# 操作系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 测试相关
+*.test.js
+*.spec.js
+/__tests__/
+/test/
+
+# 临时文件
+*.tmp
+*.temp
+*~
