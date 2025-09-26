@@ -21,6 +21,31 @@ io.on("connection", (sock) => {
   sock.on("call", (roomId) => {
     io.to(roomId).emit("call");
   });
+
+  // 接听
+  sock.on("acceptCall", (roomId) => {
+    io.to(roomId).emit("acceptCall");
+  });
+
+  // 拒绝
+  sock.on("refuseCall", (roomId) => {
+    io.to(roomId).emit("refuseCall");
+  });
+
+  // 发送Offer
+  sock.on("sendOffer", ({ roomId, offer }) => {
+    io.to(roomId).emit("sendOffer", offer);
+  });
+
+  // 接收Answer
+  sock.on("sendAnswer", ({ roomId, answer }) => {
+    io.to(roomId).emit("sendAnswer", answer);
+  });
+
+  // 收到candidate信息
+  sock.on("sendIceCandidate", ({ roomId, candidate }) => {
+    io.to(roomId).emit("sendIceCandidate", candidate);
+  });
 });
 
 server.listen(3000, () => {
